@@ -1,0 +1,989 @@
+/* ---------------------------
+   ESTILOS GERAIS
+--------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fraunces", serif;
+}
+
+*::selection {
+  color: #fff;
+  background-color: #000;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #F7F7F7;
+}
+
+/* ---------------------------
+      NAVEGAÇÃO FIXA
+   --------------------------- */
+
+#nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 25px;
+  background-color: transparent;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Classe aplicada quando rolar a página */
+.nav-com-blur {
+  background: linear-gradient(to bottom, rgba(156, 12, 53, 0.9) 0%, rgba(156, 12, 53, 0.3) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#nav-logo img {
+  height: 90px;
+  margin-right: 10px;
+  z-index: 102;
+  transition: height 0.4s ease, transform 0.4s ease;
+}
+
+/* Efeito quando a nav é compactada */
+#nav.nav-mini #nav-logo img {
+  height: 60px;
+  transform: scale(0.95);
+}
+
+#nav.nav-mini {
+  padding: 10px 25px;
+  align-items: center;
+  /* centraliza verticalmente os itens */
+}
+
+#nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+#nav-links .links {
+  display: flex;
+  gap: 20px;
+}
+
+body.menu-aberto #nav-links .links {
+  display: none;
+}
+
+#nav-links .links a {
+  text-decoration: none;
+  color: white !important;
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0 10px;
+  position: relative;
+}
+
+#nav-links .links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+#nav-links .links a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  position: relative;
+  z-index: 201;
+}
+
+.menu-icon i {
+  font-size: 32px;
+  font-weight: 300;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vh;
+}
+
+.menu-logos img {
+  height: 80px;
+}
+
+
+/* ---------------------------
+      CURSOR CUSTOMIZADO
+   --------------------------- */
+
+#cursor {
+  height: 180px;
+  width: 180px;
+  background-color: rgba(224, 139, 189, 0.814);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ---------------------------
+      MENU FULL WIDTH
+   --------------------------- */
+
+#menu-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #9C0C35;
+  color: white;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vh 1vw;
+  overflow: hidden;
+}
+
+#menu-fullscreen.aberto {
+  display: flex;
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.menu-conteudo {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 3vh;
+}
+
+.menu-itens {
+  text-align: left;
+}
+
+.menu-itens li {
+  list-style: none;
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  position: relative;
+}
+
+.menu-itens li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-itens li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.menu-itens li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.menu-itens li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.menu-itens li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.menu-itens li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.menu-itens li:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.menu-itens li:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.menu-itens li:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.menu-itens li:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.menu-itens li:nth-child(10) {
+  animation-delay: 1.0s;
+}
+
+.menu-itens li:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 10;
+  }
+
+  to {
+    transform: translateY(-100%);
+    opacity: 10;
+  }
+}
+
+#menu-fullscreen.fechando {
+  animation: slideUp 0.9s ease forwards;
+}
+
+.menu-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.menu-social h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.menu-social a {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.menu-social a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+  transform-origin: right;
+}
+
+.menu-social a:hover::after {
+  width: 100%;
+}
+
+/* Botão de fechar visível */
+.menu-icon.fechar i {
+  color: white;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+/* Visibilidade condicional das logos mantida */
+body.menu-aberto #nav-logo {
+  display: block;
+}
+
+.submenu {
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  background-color: #9C0C35;
+  min-width: 240px;
+  /* aumento sutil */
+  max-width: 280px;
+  /* evita exageros */
+}
+
+.has-submenu:hover .submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu-itens li a {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-itens li a::after,
+.submenu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.menu-itens li a:hover::after,
+.submenu li a:hover::after {
+  width: 100%;
+}
+
+.submenu li {
+  font-size: 1.2rem;
+  margin: 0.4rem 0;
+}
+
+/* ---------------------------
+      HERO SECTION
+   --------------------------- */
+
+#hero {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 1vw;
+  padding-top: 20vh;
+  background-color: #9C0C35;
+}
+
+#hero h1 {
+  font-size: 7vw;
+  font-family: "Fraunces", serif;
+  color: white;
+}
+
+.hero-image {
+  aspect-ratio: 16 / 9;
+  max-height: 100vh;
+  width: 100%;
+  margin-top: 1vw;
+  position: relative;
+  overflow: hidden;
+  background-color: #9C0C35;
+  border-radius: 10px;
+}
+
+.hero-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ---------------------------
+      CHAMADA SECTION (Sobre)
+   --------------------------- */
+
+.page2 {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw 1vw;
+  background-color: #9C0C35;
+}
+
+.page2-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 4vw;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page2-left {
+  flex: 1;
+}
+
+.page2-left h1 {
+  font-size: 3vw;
+  line-height: 1.2;
+  color: white;
+  font-weight: 400;
+}
+
+.page2-right {
+  flex: 1;
+  font-size: 1.1vw;
+  line-height: 1.6;
+  color: white;
+}
+
+/* ---------------------------
+      SEÇÃO DE NOTÍCIAS
+   --------------------------- */
+
+#noticias {
+  padding: 8vh 1vw;
+  background-color: #fff;
+}
+
+.noticias-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.titulo-sessao {
+  width: 100%;
+  font-size: 4vw;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 3rem;
+  font-family: "Fraunces", serif;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.noticia-destaque {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.noticia-destaque img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.noticia-destaque .conteudo h2 {
+  font-size: 2vw;
+  margin-bottom: 1rem;
+}
+
+.noticia-destaque .conteudo p {
+  font-size: 1vw;
+  color: #444;
+  line-height: 1.6;
+}
+
+.noticia-destaque .rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.noticia-destaque .rodape .ri-arrow-right-up-line {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+
+.tag {
+  display: inline-block;
+  background-color: #ccc;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.tag:hover {
+  background-color: #9C0C35;
+  color: white;
+}
+
+
+.noticias-lista {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.noticia-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.noticia-card:hover {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.noticia-card img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.noticia-card .info h4 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.noticia-card .info h4::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.noticia-card .info h4:hover::after {
+  width: 100%;
+}
+
+.noticia-card .rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.noticia-card .rodape .ri-arrow-right-up-line {
+  font-size: 1rem;
+  color: #333;
+}
+
+.ri-arrow-right-up-line {
+  transition: transform 0.3s ease;
+}
+
+.ri-arrow-right-up-line:hover {
+  transform: scale(1.2);
+}
+
+.ri-arrow-right-up-line::after {
+  display: none !important;
+}
+
+/* ---------------------------
+   IDENTIDADE PUC
+--------------------------- */
+
+#identidade {
+  background-color: white;
+  position: relative;
+}
+
+.identidade-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  padding: 5vh 1vw 0;
+  position: relative;
+  z-index: 2;
+}
+
+.identidade-grid .aluno {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.identidade-grid .aluno img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 12px;
+}
+
+/* Imagem da direita (maior) */
+.identidade-grid .aluno.destaque img {
+  height: 700px;
+  margin-top: -90px;
+  object-position: top center;
+  z-index: 3;
+  position: relative;
+}
+
+/* Faixa vinho com texto colado à esquerda */
+.identidade-frase {
+  background-color: #9C0C35;
+  padding: 8vh 1vw;
+  margin-top: -80px;
+  z-index: 1;
+  position: relative;
+}
+
+.identidade-frase p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+
+/* ---------------------------
+   RODAPÉ
+--------------------------- */
+
+#rodape {
+  background-color: #9C0C35;
+  color: white;
+  padding: 10vh 1vw 5vh;
+}
+
+.rodape-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 3vw;
+  margin: 0 auto;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Coluna Esquerda */
+.coluna.esquerda {
+  align-items: flex-start;
+}
+
+/* Coluna Central */
+.coluna.centro {
+  align-items: center;
+  text-align: center;
+}
+
+.coluna.centro p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Coluna Direita - Ajustes principais aqui */
+.coluna.direita {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Estilos comuns para todas as colunas */
+.coluna h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.6rem;
+}
+
+.coluna ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+  /* Garante que a lista ocupe toda a largura da coluna */
+}
+
+/* Estilo base para todos os itens da lista */
+.coluna ul li {
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  /* Fundamental para conter o sublinhado */
+  width: auto;
+  /* Ocupa apenas o espaço necessário */
+  padding-right: 2px;
+  /* Pequeno ajuste visual */
+}
+
+/* Efeito de sublinhado para todos os itens */
+.coluna ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+/* Efeito hover - cresce até o tamanho do texto */
+.coluna ul li:hover::after {
+  width: 100%;
+  /* 100% da largura do li, não do container pai */
+}
+
+/* AJUSTES ESPECÍFICOS PARA COLUNA ESQUERDA */
+.coluna.esquerda ul li {
+  text-align: left;
+  /* Garante que o elemento não expanda */
+  max-width: 100%;
+  white-space: nowrap;
+  /* Opcional: evita quebra de linha */
+}
+
+/* AJUSTES PARA COLUNA DIREITA (manter o que já funciona) */
+.coluna.direita ul {
+  align-items: flex-end;
+}
+
+.coluna.direita ul li {
+  text-align: right;
+}
+
+/* Logos */
+.logo-fmd {
+  width: 90px;
+  margin-bottom: 1rem;
+}
+
+.logo-puc {
+  height: 120px;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+/* Rodapé inferior */
+.rodape-copy {
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+/* ---------------------------
+      RESPONSIVO
+   --------------------------- */
+
+@media (max-width: 600px) {
+  #nav {
+    padding: 15px;
+  }
+
+  #nav-links .links {
+    display: none;
+  }
+
+  .menu-icon {
+    padding: 7px;
+  }
+
+  .menu-icon i {
+    font-size: 15px;
+  }
+
+  #hero {
+    min-height: 70vh;
+    padding: 0 3vw;
+    padding-top: 25vh;
+  }
+
+  #hero h1 {
+    font-size: 15.5vw;
+    letter-spacing: -3px;
+  }
+
+  .hero-image {
+    height: 25vh;
+    margin-top: 3vw;
+  }
+
+  .page2-container {
+    flex-direction: column;
+  }
+
+  .page2-left h1 {
+    font-size: 7vw;
+  }
+
+  .page2-right {
+    font-size: 4vw;
+  }
+
+  .noticias-container {
+    flex-direction: column;
+  }
+
+  .noticia-destaque .conteudo h2 {
+    font-size: 6vw;
+  }
+
+  .noticia-destaque .conteudo p {
+    font-size: 4vw;
+  }
+
+  .noticia-card {
+    flex-direction: column;
+  }
+
+  .noticia-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .rodape-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .coluna {
+    margin-bottom: 2rem;
+  }
+
+  .coluna.centro {
+    flex: unset;
+  }
+
+  .identidade-grid {
+    flex-direction: column;
+  }
+
+  .identidade-grid .aluno img,
+  .identidade-grid .aluno.destaque img {
+    height: auto;
+    margin-top: 0;
+  }
+
+  .identidade-frase {
+    padding: 6vh 4vw;
+    margin-top: 0;
+  }
+
+  .identidade-frase p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* Animação de sublinhado suave para todos os links e itens interativos */
+a,
+.ri-arrow-right-up-line,
+.titulo-sessao,
+#nav-links .links a,
+.menu-social a,
+#rodape .coluna ul li {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a::after,
+.ri-arrow-right-up-line::after,
+.titulo-sessao::after,
+#nav-links .links a::after,
+.menu-social a::after,
+#rodape .coluna ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:hover::after,
+.ri-arrow-right-up-line:hover::after,
+.tag:hover::after,
+.titulo-sessao:hover::after,
+#nav-links .links a:hover::after,
+.menu-social a:hover::after,
+#rodape .coluna ul li:hover::after {
+  width: 100%;
+}
+
+/* Remove sublinhado das setas */
+.ri-arrow-right-up-line::after,
+.ri-arrow-right-up-line:hover::after {
+  display: none !important;
+}
+
+/* Seta cresce quando hover ocorre no título também */
+.noticia-destaque .conteudo:hover .ri-arrow-right-up-line,
+.noticia-card:hover .ri-arrow-right-up-line {
+  transform: scale(1.2);
+}
+
+/* Slider */
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.hero-slide.ativo {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* cobre o espaço sem distorcer */
+  border-radius: 10px;
+}

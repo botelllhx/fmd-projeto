@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Notícias & Novidades - Faculdade Mineira de Direito</title>
+     <link rel="shortcut icon" href="../assets/img/fmd (1) 1.png" type="image/x-icon">
+
+     <!-- Locomotive Scroll CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
+     <!-- Ícones Remix -->
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+     <!-- Tipografia -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap"
+          rel="stylesheet">
+
+     <!-- CSS principal -->
+     <link rel="stylesheet" href="../assets/css/style.css">
+
+     <!-- CSS específico para notícias -->
+     <link rel="stylesheet" href="../assets/css/noticias.css">
+</head>
+
+<body>
+     <!-- Menu de navegação fixo -->
+     <nav id="nav">
+          <div id="nav-logo">
+               <img class="logo1" src="../assets/img/fmd (1) 1.png" alt="Logo FMD">
+               <img class="logo2" src="../assets/img/image 1.png" alt="Logo PUC Minas">
+          </div>
+          <div id="nav-links">
+               <div class="links">
+                    <a href="/">Home</a>
+                    <a href="#" class="ativo">Notícias</a>
+                    <a href="#">Eventos</a>
+               </div>
+               <div class="menu-icon" id="menu-toggle">
+                    <i class="ri-menu-fill"></i>
+               </div>
+          </div>
+     </nav>
+
+     <!-- Cursor customizado -->
+     <div id="cursor"></div>
+
+     <!-- Menu Fullscreen -->
+     <div id="menu-fullscreen">
+          <div class="menu-conteudo">
+               <!-- Itens principais do menu -->
+               <ul class="menu-itens">
+                    <li class="has-submenu">
+                         <a href="#">Sobre</a>
+                         <ul class="submenu">
+                              <li><a href="#">Apresentação e História</a></li>
+                              <li><a href="#">Diretoria e Coordenações</a></li>
+                         </ul>
+                    </li>
+                    <li class="has-submenu">
+                         <a href="#">Ensino</a>
+                         <ul class="submenu">
+                              <li><a href="#">Graduação</a></li>
+                              <li><a href="#">Pós Graduação</a></li>
+                         </ul>
+                    </li>
+                    <li class="has-submenu">
+                         <a href="#">Pesquisa</a>
+                         <ul class="submenu">
+                              <li><a href="#">AGORA</a></li>
+                              <li><a href="#">NAP</a></li>
+                              <li><a href="#">NUJUP</a></li>
+                              <li><a href="#">Ciclo de Pesquisa, Monografia e Revista</a></li>
+                         </ul>
+                    </li>
+                    <li class="has-submenu">
+                         <a href="#">Extensão</a>
+                         <ul class="submenu">
+                              <li><a href="#">Oficinas de Extensão</a></li>
+                              <li><a href="#">Projetos</a></li>
+                              <li><a href="#">E-book Extensão</a></li>
+                         </ul>
+                    </li>
+                    <li><a href="#">Monitoria</a></li>
+                    <li><a href="#">VirtuaJus</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Área do Aluno</a></li>
+                    <li><a href="#">Egressos</a></li>
+               </ul>
+
+               <!-- Redes sociais -->
+               <div class="menu-social">
+                    <h4>Conecte-se conosco</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Youtube</a>
+               </div>
+          </div>
+     </div>
+
+     <!-- Container principal -->
+     <main id="main">
+          <!-- Hero da página de notícias -->
+          <section id="hero-noticias" class="hero-noticias">
+               <h1>Notícias & Novidades</h1>
+               <p>Fique por dentro das últimas atualizações da Faculdade Mineira de Direito</p>
+          </section>
+
+          <!-- Seção de notícias (mesmo layout da home) -->
+          <section id="noticias">
+               <div class="noticias-container">
+                    <!-- Título da seção -->
+                    <h2 class="titulo-sessao-noticias">Últimas Notícias</h2>
+
+                    <!-- Notícia em destaque -->
+                    <div class="noticia-destaque">
+                         <div class="loading-destaque">
+                              <div class="loading-spinner"></div>
+                              <p>Carregando notícia em destaque...</p>
+                         </div>
+                    </div>
+
+                    <!-- Lista de notícias -->
+                    <div class="noticias-lista">
+                         <div class="loading-lista">
+                              <div class="loading-spinner"></div>
+                              <p>Carregando notícias...</p>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+          <!-- Filtros de notícias (abaixo da primeira seção) -->
+          <section id="filtros">
+               <div class="filtros-container">
+                    <button class="filtro-btn ativo" data-categoria="todos">Todos</button>
+                    <button class="filtro-btn" data-categoria="noticias">Notícias</button>
+                    <button class="filtro-btn" data-categoria="eventos">Eventos</button>
+                    <button class="filtro-btn" data-categoria="editais">Editais</button>
+               </div>
+          </section>
+
+          <!-- Seção de notícias em grid (4 colunas) -->
+          <section id="noticias-grid">
+               <div class="noticias-grid-container">
+                    <div class="loading-grid">
+                         <div class="loading-spinner"></div>
+                         <p>Carregando mais notícias...</p>
+                    </div>
+               </div>
+          </section>
+
+          <!-- Rodapé -->
+          <footer id="rodape">
+               <div class="rodape-grid">
+                    <div class="coluna esquerda">
+                         <img src="../assets/img/fmd (1) 1.png" alt="Logo FMD" class="logo-fmd">
+                         <h4>Conecte-se conosco</h4>
+                         <ul>
+                              <li>Facebook</li>
+                              <li>Instagram</li>
+                              <li>Twitter</li>
+                              <li>LinkedIn</li>
+                              <li>Youtube</li>
+                         </ul>
+                    </div>
+
+                    <div class="coluna centro">
+                         <img src="../assets/img/logo_grande.png" alt="Logo PUC Minas" class="logo-puc">
+                         <p>Av. Dom José Gaspar, 500 – Prédio 05 – Coração Eucarístico<br>
+                              Belo Horizonte – CEP: 30140-100.</p>
+                    </div>
+
+                    <div class="coluna direita">
+                         <h4>Veja também</h4>
+                         <ul>
+                              <li>Apresentação e História</li>
+                              <li>Diretoria e Coordenações</li>
+                              <li>Pós Graduação</li>
+                              <li>Graduação</li>
+                              <li>ÁGORA</li>
+                         </ul>
+                    </div>
+               </div>
+
+               <div class="rodape-copy">
+                    <p>&copy; 2025 Faculdade Mineira de Direito - Todos os direitos reservados.</p>
+               </div>
+          </footer>
+     </main>
+
+     <!-- Scripts -->
+     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+     <!-- Script principal modificado para evitar erros -->
+     <script>
+          document.addEventListener('DOMContentLoaded', function () {
+               // Locomotive Scroll
+               if (document.querySelector('#main')) {
+                    const scroll = new LocomotiveScroll({
+                         el: document.querySelector("#main"),
+                         smooth: true,
+                    });
+               }
+
+               // Toggle menu
+               const menuToggle = document.getElementById("menu-toggle");
+               const menu = document.getElementById("menu-fullscreen");
+               const menuIcon = menuToggle.querySelector("i");
+               let menuAberto = false;
+
+               if (menuToggle && menu) {
+                    menuToggle.addEventListener("click", () => {
+                         menuAberto = !menuAberto;
+                         if (menuAberto) {
+                              menu.style.display = "flex";
+                              menu.classList.remove("fechando");
+                              menu.classList.add("aberto");
+                              document.body.classList.add("menu-aberto");
+                              menuIcon.classList.remove("ri-menu-fill");
+                              menuIcon.classList.add("ri-close-line");
+                         } else {
+                              menu.classList.remove("aberto");
+                              menu.classList.add("fechando");
+                              document.body.classList.remove("menu-aberto");
+                              menuIcon.classList.remove("ri-close-line");
+                              menuIcon.classList.add("ri-menu-fill");
+                              setTimeout(() => {
+                                   menu.classList.remove("fechando");
+                                   menu.style.display = "none";
+                              }, 600);
+                         }
+                    });
+               }
+
+               // Cursor
+               const cursor = document.querySelector("#cursor");
+               if (cursor) {
+                    document.addEventListener("mousemove", function (e) {
+                         gsap.to(cursor, {
+                              left: e.clientX,
+                              top: e.clientY,
+                              duration: 0.2,
+                              ease: "power2.out",
+                         });
+                    });
+               }
+
+               // Efeito blur + logos menores na nav ao scroll
+               const nav = document.getElementById('nav');
+               const logo1 = document.querySelector('.logo1');
+               const logo2 = document.querySelector('.logo2');
+
+               window.addEventListener('scroll', () => {
+                    const scrollTop = window.scrollY;
+
+                    if (scrollTop > 100) {
+                         nav.classList.add('nav-com-blur', 'nav-mini');
+                         logo1.style.height = '60px';
+                         logo2.style.height = '60px';
+                    } else {
+                         nav.classList.remove('nav-com-blur', 'nav-mini');
+                         logo1.style.height = '90px';
+                         logo2.style.height = '90px';
+                    }
+               });
+          });
+
+     </script>
+     <!-- Script específico para notícias -->
+     <script src="../assets/js/noticias.js"></script>
+</body>
+
+</html>

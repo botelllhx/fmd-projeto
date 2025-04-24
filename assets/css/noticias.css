@@ -1,0 +1,304 @@
+/* ---------------------------
+   ESTILOS ESPECÍFICOS PARA PÁGINA DE NOTÍCIAS
+--------------------------- */
+
+/* Adicione isso no seu noticias.css */
+html,
+body {
+     overflow: hidden;
+     height: 100%;
+     font-family: "Fraunces", serif;
+}
+
+#main {
+     height: 100vh;
+     overflow-y: auto;
+}
+
+/* Hero da página de notícias */
+.hero-noticias {
+     min-height: 60vh;
+     width: 100%;
+     padding: 0 1vw;
+     padding-top: 20vh;
+     background-color: #9C0C35;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+
+.hero-noticias h1 {
+     font-size: 5vw;
+     font-family: "Fraunces", serif;
+     margin-bottom: 1rem;
+}
+
+.hero-noticias p {
+     font-size: 1.5vw;
+     font-weight: 300;
+     max-width: 60%;
+}
+
+.titulo-sessao-noticias {
+     width: 100%;
+     font-size: 2vw;
+     font-weight: 700;
+     color: #2d2d2d;
+     margin-bottom: 3rem;
+     font-family: "Fraunces", serif;
+     position: relative;
+     display: inline-block;
+     cursor: pointer;
+}
+
+/* Filtros */
+#filtros {
+     padding: 3vh 1vw;
+     background-color: #f5f5f5;
+     position: sticky;
+     top: 0;
+     z-index: 10;
+}
+
+.filtros-container {
+     display: flex;
+     gap: 1rem;
+     justify-content: center;
+     flex-wrap: wrap;
+}
+
+.filtro-btn {
+     background: none;
+     border: none;
+     padding: 0.8rem 1.5rem;
+     font-size: 1.3rem;
+     cursor: pointer;
+     border-radius: 50px;
+     transition: all 0.3s ease;
+     position: relative;
+     font-weight: 600;
+}
+
+.filtro-btn::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 0;
+     height: 2px;
+     background-color: #9C0C35;
+     transition: width 0.3s ease;
+}
+
+.filtro-btn:hover::after,
+.filtro-btn.ativo::after {
+     width: 70%;
+}
+
+.filtro-btn.ativo {
+     color: #9C0C35;
+     font-weight: 600;
+}
+
+/* Notícias em grid (4 colunas) */
+
+#noticias-grid {
+     background-color: #fff;
+     padding: 5vh 1vw;
+}
+
+
+.noticias-grid-container {
+     position: relative;
+     /* Adiciona contexto de posicionamento */
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 2rem;
+     padding: 5vh 0vw;
+     margin: 0 auto;
+}
+
+.noticia-card-grid {
+     position: relative;
+     /* Container relativo para posicionamento absoluto interno */
+     min-height: 350px;
+     display: flex;
+     flex-direction: column;
+     border-radius: 8px;
+     overflow: hidden;
+     transition: background-color 0.3s ease;
+}
+
+.noticia-card-grid:hover {
+     background-color: #f5f5f5;
+     border-radius: 8px;
+
+}
+
+.noticia-card-grid img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+}
+
+.noticia-card-grid .img-container {
+     position: relative;
+     /* Container da imagem relativo para a tag absoluta */
+     width: 100%;
+     height: 200px;
+}
+
+.noticia-card-grid .info {
+     padding: 1.5rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.8rem;
+}
+
+.noticia-card-grid h3 {
+     font-size: 1.2rem;
+     line-height: 1.3;
+     position: relative;
+     display: inline-block;
+     cursor: pointer;
+     margin-bottom: 10px;
+}
+
+.noticia-card-grid h3::after {
+     content: "";
+     position: absolute;
+     bottom: -2px;
+     left: 0;
+     height: 2px;
+     width: 0;
+     background-color: currentColor;
+     transition: width 0.3s ease;
+}
+
+.noticia-card-grid h3:hover::after {
+     width: 100%;
+}
+
+.noticia-card-grid p {
+     font-size: 0.9rem;
+     color: #666;
+     line-height: 1.5;
+}
+
+.noticia-card-grid .tag {
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     z-index: 2;
+     display: inline-block;
+     padding: 0.3rem 0.8rem;
+     border-radius: 50px;
+     font-size: 0.8rem;
+     font-weight: 600;
+     text-transform: capitalize;
+     background-color: rgba(0, 0, 0, 0.7);
+     /* Fundo semi-transparente */
+     color: white;
+}
+
+.noticia-card-grid .tag.noticias {
+     background-color: #9C0C35;
+     color: #ffff;
+}
+
+.noticia-card-grid .tag.eventos {
+     background-color: #e8f5e9;
+     color: #388e3c;
+}
+
+.noticia-card-grid .tag.editais {
+     background-color: #fff3e0;
+     color: #ef6c00;
+}
+
+
+/* Ajuste o posicionamento do conteúdo abaixo da imagem */
+.noticia-card-grid .info {
+     padding: 1.5rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.8rem;
+     margin-top: -1rem;
+     /* Ajuste fino para alinhamento */
+}
+
+/* Remova a tag do rodapé se ela existir lá */
+.noticia-card-grid .rodape .tag {
+     display: none;
+}
+
+.sem-noticias {
+     grid-column: 1 / -1;
+     text-align: center;
+     padding: 2rem;
+     color: #666;
+}
+
+/* Estados de carregamento */
+.loading-destaque,
+.loading-lista,
+.loading-grid {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 2rem;
+     color: #666;
+}
+
+.loading-spinner {
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     border: 4px solid rgba(156, 12, 53, 0.2);
+     border-radius: 50%;
+     border-top-color: #9C0C35;
+     animation: spin 1s ease-in-out infinite;
+     margin-bottom: 1rem;
+}
+
+@keyframes spin {
+     to {
+          transform: rotate(360deg);
+     }
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+     .noticias-grid-container {
+          grid-template-columns: repeat(3, 1fr);
+     }
+}
+
+@media (max-width: 900px) {
+     .noticias-grid-container {
+          grid-template-columns: repeat(2, 1fr);
+     }
+
+     .hero-noticias h1 {
+          font-size: 8vw;
+     }
+
+     .hero-noticias p {
+          font-size: 4vw;
+          max-width: 90%;
+     }
+}
+
+@media (max-width: 600px) {
+     .noticias-grid-container {
+          grid-template-columns: 1fr;
+     }
+
+     .noticia-destaque img {
+          height: 200px;
+     }
+}
