@@ -210,23 +210,67 @@ function carregarNoticiasMockadas() {
   const noticiasMock = [
     {
       id: 1,
-      titulo: 'FMD promove seminário sobre Direito Digital',
-      descricao: 'Evento discutirá as novas legislações sobre privacidade de dados e seus impactos.',
+      titulo: 'XVI Congresso Latino-Americano de Direito Material e Processual do Trabalho',
+      descricao: 'O curso de graduação em Direito da PUC Minas é frequentemente reconhecido em rankings nacionais e internacionais de excelência. A FMD possui acordos e parcerias internacionais que possibilitam o intercâmbio de alunos com Alemanha, Canadá, Chile, Espanha, França, Itália, Hungria, México, Portugal, entre outros.',
+      categoria: 'eventos',
+      imagem: '../assets/img/noticia-7.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
+    {
+      id: 2,
+      titulo: 'Aula inaugural da Faculdade Mineira de Direito',
+      descricao: '',
       categoria: 'eventos',
       imagem: '../assets/img/noticia-1.png',
       data: '15 de novembro de 2023',
       url: '#'
     },
     {
-      id: 2,
-      titulo: 'FMD promove seminário sobre Direito Digital',
-      descricao: 'Evento discutirá as novas legislações sobre privacidade de dados e seus impactos.',
-      categoria: 'eventos',
-      imagem: '../assets/img/noticia-1.png',
+      id: 3,
+      titulo: 'Edital seleciona extensionistas para projeto aprovado no Programa de Extensão Universitária da Pós-graduação',
+      descricao: '',
+      categoria: 'editais',
+      imagem: '../assets/img/noticia-2.png',
       data: '15 de novembro de 2023',
       url: '#'
-    }
-    // Adicione mais notícias mockadas se necessário
+    },
+    {
+      id: 3,
+      titulo: 'Medalha da Inconfidência 2025: professores da PUC Minas recebem honrarias do Governo de Minas Gerais',
+      descricao: '',
+      categoria: 'eventos',
+      imagem: '../assets/img/noticia-3.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
+    {
+      id: 4,
+      titulo: 'Nota de Pesar pelo falecimento de Sua Santidade, o Papa Francisco',
+      descricao: '',
+      categoria: 'noticias',
+      imagem: '../assets/img/noticia-4.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
+    {
+      id: 5,
+      titulo: 'Celebração Eucarística abre comemorações de aniversário do Campus São Gabriel',
+      descricao: '',
+      categoria: 'noticias',
+      imagem: '../assets/img/noticia-5.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
+    {
+      id: 6,
+      titulo: '25 anos PUC São Gabriel e 30 anos IEC',
+      descricao: '',
+      categoria: 'eventos',
+      imagem: '../assets/img/noticia-6.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
   ];
 
   todasNoticias = noticiasMock;
