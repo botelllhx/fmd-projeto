@@ -1,5 +1,5 @@
 // Configuração da NewsAPI
-const API_KEY = '6bf6f486bc2c40ffa83dc50c39a49150'; // Substitua pela sua chave
+const API_KEY = ''; // Substitua pela sua chave
 const API_URL = `https://newsapi.org/v2/everything?q=direito+AND+(universidade+OR+faculdade)&language=pt&sortBy=publishedAt&pageSize=12&apiKey=${API_KEY}`;
 
 // Categorias para nossas notícias
