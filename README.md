@@ -33,76 +33,79 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## Funcionalidades Globais
+## Funcionalidades Implementadas
 
-- **Navbar fixa e com gradiente blur no scroll**
-- **Animação das logos** que se ajustam dinamicamente
-- **Menu fullscreen** para navegação em telas pequenas
-- **Cursor customizado** suave com GSAP
-- **Animações em seções e cards** com ScrollTrigger
-- **Parallax em heros e sliders** com Locomotive Scroll
+### Página Inicial (`index.html`)
 
----
-
-## Página Inicial
-
-- Hero com imagem animada
-- Slider com transição automática
-- Sessão de apresentação da FMD
-- Seção de notícias em destaque
-- Identidade visual da PUC com cards
-- Rodapé institucional
+- Hero section com **slider animado** e parallax suave
+- Navegação com **menu fullscreen estilizado**, utilizado **em todas as resoluções**
+- Animações suaves de entrada com GSAP
+- Cursor customizado e interativo
+- Seção de notícias com cards animados
+- Rodapé com informações organizadas e links úteis
 
 ---
 
-## Página de Notícias (`noticias-novidades.html`)
+### Página de Notícias e Novidades (`noticias-novidades.html`)
 
-- Integração com **NewsAPI**
-- Seções dinâmicas com destaque, lista e grid
-- Filtros por categoria
-- Carregamento mockado caso a API falhe
+- Integração com a [NewsAPI](https://newsapi.org/) para exibição de notícias atualizadas
+- Filtros interativos por categoria: `Notícias`, `Eventos`, `Editais`
+- Apresentação dividida em:
+  - Destaque
+  - Lista lateral
+  - Grid em colunas
+- Scroll suave com Locomotive Scroll
+- Animações com ScrollTrigger
 
-### ⚠️ Importante
+#### ⚠️ Importante: funcionamento local
 
-**A página de notícias deve ser aberta com Live Server.** Caso contrário, a API pode ser bloqueada por CORS.
+> A página de notícias **requer um servidor local** (como o Live Server do VS Code) para funcionar corretamente devido ao uso de `fetch`.
 
-#### Como abrir com Live Server (VS Code):
+##### 🔧 Como rodar com Live Server:
 
-1. Instale a extensão **Live Server**
+1. Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VS Code
 2. Clique com o botão direito no arquivo `noticias-novidades.html`
 3. Selecione **"Open with Live Server"**
-4. Será aberto em http://127.0.0.1:5500 ou similar
+
+> Caso não utilize servidor, a página exibe automaticamente **conteúdo mockado** para demonstração.
 
 ---
 
-## Página Apresentação e História
+### Página de Apresentação e História (`apresentacao-historia.html`)
 
-- Introdução institucional
-- **Linha do tempo animada**
-- Seção "A FMD Hoje" com grid de cards
-- Design consistente com a Home
-- Totalmente responsiva
+- Conteúdo institucional estruturado em **linha do tempo histórica**
+- Destaques sobre:
+  - Fundação da FMD
+  - Primeiras turmas
+  - Reconhecimento oficial
+  - Criação da universidade
+- Cards modernos sobre estrutura atual e parcerias internacionais
+- Layout responsivo com animações suaves
+- Design consistente com a identidade visual da FMD
 
 ---
 
-## Responsividade
+## Diferenciais de Design
 
-- Navbar adaptada para telas pequenas
-- Layout reorganiza elementos em colunas
-- Fontes e espaçamentos ajustados
-- Menu fullscreen substitui a navbar padrão
+- Tipografia refinada com **Fraunces** (Google Fonts)
+- **Menu fullscreen permanente**, com animações em todas as resoluções (diferencial UX)
+- Animações elegantes com GSAP
+- Navegação fixada com **gradiente desfocado ao rolar**
+- Scroll suave com Locomotive Scroll
+- Cores e elementos respeitando a identidade institucional
 
 ---
 
 ## Tecnologias Utilizadas
 
-- HTML5 e CSS3 puro
-- JavaScript moderno (ES6+)
-- GSAP 3.12.2 + ScrollTrigger
-- Locomotive Scroll 3.5.4
-- NewsAPI (com fallback)
-- Google Fonts e Remix Icon
+- HTML5 / CSS3
+- JavaScript (Vanilla)
+- GSAP + ScrollTrigger
+- Locomotive Scroll
+- NewsAPI
+- Google Fonts
+- Remix Icons
 
 ---
 
-Desenvolvido com carinho por [Mateus Botelho].
+Este projeto foi desenvolvido com foco em responsividade, acessibilidade visual e uma experiência interativa moderna para destacar o prestígio da Faculdade Mineira de Direito.
