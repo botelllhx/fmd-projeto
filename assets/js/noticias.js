@@ -213,7 +213,7 @@ function carregarNoticiasMockadas() {
       titulo: 'FMD promove seminário sobre Direito Digital',
       descricao: 'Evento discutirá as novas legislações sobre privacidade de dados e seus impactos.',
       categoria: 'eventos',
-      imagem: '../fmd-projeto/assets/img/noticia-1.png',
+      imagem: './assets/img/noticia-1.png',
       data: '15 de novembro de 2023',
       url: '#'
     },
@@ -222,7 +222,7 @@ function carregarNoticiasMockadas() {
       titulo: 'FMD promove seminário sobre Direito Digital',
       descricao: 'Evento discutirá as novas legislações sobre privacidade de dados e seus impactos.',
       categoria: 'eventos',
-      imagem: '../fmd-projeto/assets/img/noticia-1.png',
+      imagem: './assets/img/noticia-1.png',
       data: '15 de novembro de 2023',
       url: '#'
     }
