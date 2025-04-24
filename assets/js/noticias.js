@@ -280,6 +280,15 @@ function carregarNoticiasMockadas() {
       data: '15 de novembro de 2023',
       url: '#'
     },
+    {
+      id: 8,
+      titulo: 'Noticia teste 2',
+      descricao: '',
+      categoria: 'eventos',
+      imagem: '../assets/img/noticia-6.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
   ];
 
   todasNoticias = noticiasMock;
