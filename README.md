@@ -3,7 +3,7 @@
 
 Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC Minas, desenvolvido com foco em uma experiência visual marcante, animações suaves e informações organizadas.
 
-## ✨ Visão Geral
+## Visão Geral
 
 - Navegação fluida com menu fixo e fullscreen responsivo
 - Animações com GSAP + Locomotive Scroll
@@ -13,7 +13,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 🗂 Estrutura de Pastas
+## Estrutura de Pastas
 
 ```
 /
@@ -33,7 +33,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 🧩 Funcionalidades Globais
+## Funcionalidades Globais
 
 - **Navbar fixa e com gradiente blur no scroll**
 - **Animação das logos** que se ajustam dinamicamente
@@ -44,7 +44,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 🏠 Página Inicial
+## Página Inicial
 
 - Hero com imagem animada
 - Slider com transição automática
@@ -55,7 +55,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 📰 Página de Notícias (`noticias-novidades.html`)
+## Página de Notícias (`noticias-novidades.html`)
 
 - Integração com **NewsAPI**
 - Seções dinâmicas com destaque, lista e grid
@@ -75,7 +75,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 🏛 Página Apresentação e História
+## Página Apresentação e História
 
 - Introdução institucional
 - **Linha do tempo animada**
@@ -85,7 +85,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 📱 Responsividade
+## Responsividade
 
 - Navbar adaptada para telas pequenas
 - Layout reorganiza elementos em colunas
@@ -94,7 +94,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - HTML5 e CSS3 puro
 - JavaScript moderno (ES6+)
@@ -105,4 +105,4 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-Desenvolvido com carinho por [Mateus].
+Desenvolvido com carinho por [Mateus Botelho].
