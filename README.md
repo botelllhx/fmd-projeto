@@ -16,7 +16,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 ## Estrutura de Pastas
 
 ```
-/
+│
 ├── index.html                             ← Página inicial (Home)
 └── assets/
     ├── css/
