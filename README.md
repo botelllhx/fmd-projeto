@@ -18,6 +18,9 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 ```
 │
 ├── index.html                             ← Página inicial (Home)
+├── pages/
+    ├── noticias-novidades.html        ← Página dinâmica de notícias
+    └── apresentacao-historia.html     ← Página institucional (história da FMD)
 └── assets/
     ├── css/
     │   ├── style.css                      ← Estilos globais
@@ -25,10 +28,7 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
     ├── js/
     │   ├── script.js                      ← Animações, menu e interações gerais
     │   └── noticias.js                    ← Carregamento dinâmico de notícias
-    ├── img/                               ← Logos e imagens
-    └── pages/
-        ├── noticias-novidades.html        ← Página dinâmica de notícias
-        └── apresentacao-historia.html     ← Página institucional (história da FMD)
+    └── img/                               ← Logos e imagens
 ```
 
 ---
