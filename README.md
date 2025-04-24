@@ -1,15 +1,22 @@
 
 # 📘 Faculdade Mineira de Direito — Site Institucional
 
-Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC Minas, desenvolvido com foco em uma experiência visual marcante, animações suaves e informações organizadas.
+Este projeto representa o site institucional da **Faculdade Mineira de Direito (FMD)** da PUC Minas, idealizado como parte de um desafio técnico. Ele foi cuidadosamente planejado e desenvolvido com foco tanto em **excelência técnica** quanto em **tendências modernas de design digital**, entregando uma experiência marcante, responsiva e fluida em qualquer dispositivo.
+
+---
 
 ## Visão Geral
 
-- Navegação fluida com menu fixo e fullscreen responsivo
-- Animações com GSAP + Locomotive Scroll
-- Página de notícias dinâmica com integração à NewsAPI
-- Páginas institucionais como "Apresentação e História"
-- Estética refinada com CSS puro, tipografia Fraunces e ícones Remix
+O site se destaca por reunir:
+
+- **Boas práticas de desenvolvimento web** moderno com JavaScript puro, GSAP e Locomotive Scroll
+- **Design contemporâneo** inspirado em **tendências visuais atuais**, como:
+- **Hero Typography**: títulos maiores e marcantes
+- **Full-width layouts**: uso inteligente da largura total da tela
+- **Grande uso de imagens** com forte impacto visual
+- **Immersive fullscreen navigation**: menu fullscreen usado em *todas* as resoluções
+- **Soft animations**: microinterações e transições suaves
+- Modularidade: páginas independentes, reutilizando componentes visuais e scripts globais
 
 ---
 
@@ -33,79 +40,76 @@ Este projeto é um site institucional para a Faculdade Mineira de Direito da PUC
 
 ---
 
-## Funcionalidades Implementadas
+## Páginas Criadas
 
-### Página Inicial (`index.html`)
+### `index.html` — Página Inicial
 
-- Hero section com **slider animado** e parallax suave
-- Navegação com **menu fullscreen estilizado**, utilizado **em todas as resoluções**
-- Animações suaves de entrada com GSAP
-- Cursor customizado e interativo
-- Seção de notícias com cards animados
-- Rodapé com informações organizadas e links úteis
+- Slider animado com parallax
+- Hero section com **tipografia imersiva**
+- Seção de notícias animadas
+- Rodapé institucional completo
+- Navegação fullscreen permanente
 
 ---
 
-### Página de Notícias e Novidades (`noticias-novidades.html`)
+### `noticias-novidades.html` — Página de Notícias
 
-- Integração com a [NewsAPI](https://newsapi.org/) para exibição de notícias atualizadas
-- Filtros interativos por categoria: `Notícias`, `Eventos`, `Editais`
-- Apresentação dividida em:
-  - Destaque
-  - Lista lateral
-  - Grid em colunas
-- Scroll suave com Locomotive Scroll
-- Animações com ScrollTrigger
+- Integração com a [NewsAPI](https://newsapi.org/)
+- Filtros interativos por tipo: Notícias, Eventos, Editais
+- Divisão em Destaque, Lista e Grid
+- Scroll suave e animações com GSAP
 
-#### ⚠️ Importante: funcionamento local
+> Funciona perfeitamente **sem necessidade de Live Server**  
+> **Recomendado** utilizar Live Server para que a integração com `fetch` funcione 100% (especialmente via `file://` em navegadores que bloqueiam requisições locais)
 
-> A página de notícias **requer um servidor local** (como o Live Server do VS Code) para funcionar corretamente devido ao uso de `fetch`.
+#### Como abrir com Live Server
 
-##### 🔧 Como rodar com Live Server:
-
-1. Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VS Code
-2. Clique com o botão direito no arquivo `noticias-novidades.html`
+1. No VS Code, instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. Clique com o botão direito em `noticias-novidades.html`
 3. Selecione **"Open with Live Server"**
 
-> Caso não utilize servidor, a página exibe automaticamente **conteúdo mockado** para demonstração.
+> Caso não esteja em um servidor local, será carregado um conteúdo mockado para visualização.
 
 ---
 
-### Página de Apresentação e História (`apresentacao-historia.html`)
+### `apresentacao-historia.html` — Página Institucional
 
-- Conteúdo institucional estruturado em **linha do tempo histórica**
-- Destaques sobre:
-  - Fundação da FMD
-  - Primeiras turmas
-  - Reconhecimento oficial
-  - Criação da universidade
-- Cards modernos sobre estrutura atual e parcerias internacionais
-- Layout responsivo com animações suaves
-- Design consistente com a identidade visual da FMD
+- Estrutura de **linha do tempo interativa**
+- Cards visuais sobre a atuação atual da FMD
+- Animações suaves com ScrollTrigger
+- Totalmente responsiva e integrada com o restante do site
 
 ---
 
-## Diferenciais de Design
+## Destaques de Design
 
-- Tipografia refinada com **Fraunces** (Google Fonts)
-- **Menu fullscreen permanente**, com animações em todas as resoluções (diferencial UX)
-- Animações elegantes com GSAP
-- Navegação fixada com **gradiente desfocado ao rolar**
-- Scroll suave com Locomotive Scroll
-- Cores e elementos respeitando a identidade institucional
+O projeto foi construído sob influência de tendências modernas em UI/UX como:
+
+- **Full Width Layouts**: uso completo da largura de tela para conteúdos e imagens
+- **Hero Typography**: títulos grandes e expressivos
+- **Visual Weight em imagens**: blocos visuais com foco em fotografia
+- **Menu Fullscreen imersivo**: adotado em **todas as resoluções**
+- **Minimalismo funcional**: uso ponderado de cores, sombras e elementos decorativos
+- **Responsividade fluida** com layout adaptado para dispositivos móveis
 
 ---
 
 ## Tecnologias Utilizadas
 
-- HTML5 / CSS3
-- JavaScript (Vanilla)
-- GSAP + ScrollTrigger
-- Locomotive Scroll
-- NewsAPI
-- Google Fonts
-- Remix Icons
+- **HTML5 / CSS3**
+- **JavaScript (Vanilla)**
+- **GSAP (GreenSock Animation Platform)**
+- **ScrollTrigger**
+- **Locomotive Scroll**
+- **Remix Icons**
+- **Google Fonts — Fraunces**
 
 ---
 
-Este projeto foi desenvolvido com foco em responsividade, acessibilidade visual e uma experiência interativa moderna para destacar o prestígio da Faculdade Mineira de Direito.
+## Conclusão
+
+Este projeto busca oferecer uma **experiência institucional moderna**, acessível e visualmente elegante, posicionando a FMD de forma marcante no ambiente digital.
+
+Ele funciona perfeitamente mesmo sem ferramentas adicionais, mas recomenda-se a execução local via Live Server para garantir **a melhor experiência com dados dinâmicos e animações suaves.**
+
+Desenvolvido com carinho e foco no detalhe.
