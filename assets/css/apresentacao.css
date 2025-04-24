@@ -1,0 +1,147 @@
+/* ESTILOS ESPECÍFICOS DA PÁGINA */
+
+.historia-header {
+    min-height: 60vh;
+    width: 100%;
+    padding: 0 1vw;
+    padding-top: 20vh;
+    background-color: #9C0C35;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.historia-header h1 {
+    font-size: 4.5vw;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.historia-header .intro {
+    font-size: 1.5vw;
+    max-width: 60%;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.historia-timeline {
+    padding: 8vh 1vw;
+    background-color: white;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.timeline-year {
+    flex: 0 0 200px;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: #9C0C35;
+    position: sticky;
+    top: 20vh;
+    align-self: flex-start;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-left: 4vw;
+    border-left: 2px solid #9C0C35;
+    padding-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #9C0C35;
+}
+
+.timeline-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2d2d2d;
+}
+
+.timeline-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.atualidade {
+    background-color: #f7f7f7;
+    padding: 8vh 1vw;
+}
+
+.atualidade h2 {
+    font-size: 3vw;
+    color: #2d2d2d;
+    margin-bottom: 3rem;
+}
+
+.atualidade-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.atualidade-card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.atualidade-card h3 {
+    font-size: 1.5rem;
+    color: #9C0C35;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .historia-header h1 {
+        font-size: 8vw;
+    }
+
+    .historia-header .intro {
+        font-size: 4vw;
+        max-width: 100%;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-year {
+        position: static;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .timeline-content {
+        padding-left: 2rem;
+        border-left: none;
+        border-top: 2px solid #9C0C35;
+        padding-top: 2rem;
+    }
+
+    .timeline-content::before {
+        left: 50%;
+        top: -11px;
+        transform: translateX(-50%);
+    }
+
+    .atualidade-grid {
+        grid-template-columns: 1fr;
+    }
+}
