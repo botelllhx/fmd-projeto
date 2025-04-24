@@ -39,7 +39,6 @@ body {
   transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-/* Classe aplicada quando rolar a página */
 .nav-com-blur {
   background: linear-gradient(to bottom, rgba(156, 12, 53, 0.9) 0%, rgba(156, 12, 53, 0.3) 100%);
   backdrop-filter: blur(10px);
@@ -53,7 +52,6 @@ body {
   transition: height 0.4s ease, transform 0.4s ease;
 }
 
-/* Efeito quando a nav é compactada */
 #nav.nav-mini #nav-logo img {
   height: 60px;
   transform: scale(0.95);
@@ -62,7 +60,6 @@ body {
 #nav.nav-mini {
   padding: 10px 25px;
   align-items: center;
-  /* centraliza verticalmente os itens */
 }
 
 #nav-links {
@@ -311,14 +308,12 @@ body.menu-aberto #nav-links .links {
   width: 100%;
 }
 
-/* Botão de fechar visível */
 .menu-icon.fechar i {
   color: white;
   font-size: 24px;
   font-weight: 100;
 }
 
-/* Visibilidade condicional das logos mantida */
 body.menu-aberto #nav-logo {
   display: block;
 }
@@ -511,7 +506,6 @@ body.menu-aberto #nav-logo {
   color: #333;
 }
 
-
 .tag {
   display: inline-block;
   background-color: #ccc;
@@ -638,7 +632,6 @@ body.menu-aberto #nav-logo {
   border-radius: 12px;
 }
 
-/* Imagem da direita (maior) */
 .identidade-grid .aluno.destaque img {
   height: 700px;
   margin-top: -90px;
@@ -647,7 +640,6 @@ body.menu-aberto #nav-logo {
   position: relative;
 }
 
-/* Faixa vinho com texto colado à esquerda */
 .identidade-frase {
   background-color: #9C0C35;
   padding: 8vh 1vw;
