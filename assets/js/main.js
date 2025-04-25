@@ -89,10 +89,4 @@ document.addEventListener('DOMContentLoaded', function () {
     setupMenu();
     setupCursor();
     setupNavScroll();
-
-    // Garante compatibilidade com mobile
-    if (window.innerWidth <= 768) {
-        document.body.style.overflowX = 'hidden';
-        document.documentElement.style.overflowX = 'hidden';
-    }
 });

@@ -33,16 +33,6 @@ async function carregarNoticias() {
           exibirGridNoticias(todasNoticias.slice(7));
           adicionarEventosFiltros();
 
-          // Atualiza o scroll global
-          if (window.locomotiveScroll) {
-              setTimeout(() => {
-                  window.locomotiveScroll.update();
-                  const main = document.querySelector('#main');
-                  main.style.minHeight = 'auto';
-                  main.style.minHeight = main.scrollHeight + 'px';
-                  window.locomotiveScroll.update();
-              }, 300);
-          }
       } else {
           carregarNoticiasMockadas();
       }

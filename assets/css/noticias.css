@@ -18,11 +18,12 @@ body {
 }
 
 #nav {
-     transform: translateZ(0); /* Aceleração por hardware */
+     transform: translateZ(0);
+     /* Aceleração por hardware */
      backface-visibility: hidden;
      -webkit-backface-visibility: hidden;
- }
- 
+}
+
 
 .hero-noticias {
      min-height: 60vh;
@@ -324,5 +325,14 @@ body {
           transition: all 0.3s ease;
           position: relative;
           font-weight: 600;
+     }
+
+     #nav {
+          position: relative;
+          background-color: #9C0C35;
+     }
+
+     #nav-logo img {
+          height: 60px !important;
      }
 }

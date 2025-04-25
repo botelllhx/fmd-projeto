@@ -25,17 +25,21 @@ O site se destaca por reunir:
 ```
 │
 ├── index.html                             ← Página inicial (Home)
+├── README.md                              ← Arquivo de documentação
 ├── pages/
-    ├── noticias-novidades.html        ← Página dinâmica de notícias
-    └── apresentacao-historia.html     ← Página institucional (história da FMD)
+│   ├── apresentacao.html                  ← Página institucional (história da FMD)
+│   └── noticias-novidades.html            ← Página de notícias e novidades
 └── assets/
     ├── css/
-    │   ├── style.css                      ← Estilos globais
-    │   └── noticias.css                   ← Estilos específicos para notícias
+    │   ├── apresentacao.css               ← Estilos específicos para a página de apresentação
+    │   ├── noticias.css                   ← Estilos específicos para a página de notícias
+    │   └── style.css                      ← Estilos globais
     ├── js/
-    │   ├── script.js                      ← Animações, menu e interações gerais
-    │   └── noticias.js                    ← Carregamento dinâmico de notícias
-    └── img/                               ← Logos e imagens
+    │   ├── apresentacao.js                ← Scripts da página de apresentação
+    │   ├── main.js                        ← Script compartilhados de notícias e apresentação
+    │   ├── noticias.js                    ← Scripts da página de notícias
+    │   └── script.js                      ← Animações, menu e interações gerais da home
+    └── img/                               ← Logos e imagens utilizadas no site
 ```
 
 ---

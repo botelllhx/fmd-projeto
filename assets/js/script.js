@@ -242,7 +242,7 @@ function iniciarSlider(classeContainer, classeSlide) {
 
 iniciarSlider(".hero-slider", ".hero-slide");
 
-// Efeito de desfoque no menu ao rolar a página - Versão universal
+// Efeito de desfoque no menu ao rolar a página
 
 function setupNavScrollEffect() {
   const nav = document.getElementById("nav");
