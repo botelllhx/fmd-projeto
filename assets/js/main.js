@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Configurações do menu (mantido igual)
     const setupMenu = () => {
         const menuToggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu-fullscreen");
-        
+
         if (menuToggle && menu) {
             const menuIcon = menuToggle.querySelector("i");
             let menuAberto = false;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const setupCursor = () => {
         const cursor = document.querySelector("#cursor");
         if (cursor) {
-            document.addEventListener("mousemove", function(e) {
+            document.addEventListener("mousemove", function (e) {
                 gsap.to(cursor, {
                     left: e.clientX,
                     top: e.clientY,
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // NOVA IMPLEMENTAÇÃO DO SCROLL DA NAV - IGUAL À HOME
     const setupNavScroll = () => {
         const nav = document.getElementById('nav');
         if (!nav) return;
@@ -55,26 +54,35 @@ document.addEventListener('DOMContentLoaded', function() {
         const logo1 = document.querySelector('.logo1');
         const logo2 = document.querySelector('.logo2');
 
-        // Função idêntica à da home
-        const handleScroll = () => {
-            const scrollY = window.scrollY || window.pageYOffset;
-            
-            if (scrollY > 100) {
-                nav.classList.add("nav-com-blur", "nav-mini");
+        // Função de atualização idêntica à home
+        const updateNav = () => {
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollPosition > 100) {
+                nav.classList.add('nav-com-blur', 'nav-mini');
                 if (logo1) logo1.style.height = '60px';
                 if (logo2) logo2.style.height = '60px';
             } else {
-                nav.classList.remove("nav-com-blur", "nav-mini");
+                nav.classList.remove('nav-com-blur', 'nav-mini');
                 if (logo1) logo1.style.height = '90px';
                 if (logo2) logo2.style.height = '90px';
             }
         };
 
-        // Listener igual ao da home
-        window.addEventListener('scroll', handleScroll);
-        
-        // Inicializa o estado
-        handleScroll();
+        // Listener otimizado para mobile
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateNav();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Atualiza estado inicial
+        updateNav();
     };
 
     // Inicializa todas as funções
@@ -82,8 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupCursor();
     setupNavScroll();
 
-    // Otimização para mobile
+    // Garante compatibilidade com mobile
     if (window.innerWidth <= 768) {
         document.body.style.overflowX = 'hidden';
+        document.documentElement.style.overflowX = 'hidden';
     }
 });

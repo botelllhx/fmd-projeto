@@ -17,6 +17,13 @@ body {
      overflow: visible;
 }
 
+#nav {
+     transform: translateZ(0); /* Aceleração por hardware */
+     backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
+ }
+ 
+
 .hero-noticias {
      min-height: 60vh;
      width: 100%;

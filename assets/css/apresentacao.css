@@ -19,6 +19,11 @@ body {
     background-color: #F7F7F7;
 }
 
+#nav {
+    transform: translateZ(0); /* Aceleração por hardware */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 
 .historia-header {
     min-height: 60vh;
