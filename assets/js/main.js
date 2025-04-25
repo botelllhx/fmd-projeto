@@ -1,7 +1,6 @@
-// assets/js/main.js
-// Configurações globais que devem ser executadas apenas uma vez
 document.addEventListener('DOMContentLoaded', function() {
-    // Configurações do menu (pode ser chamado várias vezes sem problemas)
+
+    // Configurações do menu
     const setupMenu = () => {
         const menuToggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu-fullscreen");
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Configurações do cursor (pode ser chamado várias vezes sem problemas)
+    // Configurações do cursor
     const setupCursor = () => {
         const cursor = document.querySelector("#cursor");
         if (cursor) {

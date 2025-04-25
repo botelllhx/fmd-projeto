@@ -328,9 +328,7 @@ body.menu-aberto #nav-logo {
   transition: all 0.4s ease;
   background-color: #9C0C35;
   min-width: 240px;
-  /* aumento sutil */
   max-width: 280px;
-  /* evita exageros */
 }
 
 .has-submenu:hover .submenu {
@@ -753,7 +751,6 @@ body.menu-aberto #nav-logo {
   text-align: right;
 }
 
-/* Logos */
 .logo-fmd {
   width: 90px;
   margin-bottom: 1rem;
@@ -765,7 +762,6 @@ body.menu-aberto #nav-logo {
   display: block;
 }
 
-/* Rodapé inferior */
 .rodape-copy {
   text-align: center;
   margin-top: 5vh;
@@ -817,13 +813,11 @@ a:hover::after,
   width: 100%;
 }
 
-/* Remove sublinhado das setas */
 .ri-arrow-right-up-line::after,
 .ri-arrow-right-up-line:hover::after {
   display: none !important;
 }
 
-/* Seta cresce quando hover ocorre no título também */
 .noticia-destaque .conteudo:hover .ri-arrow-right-up-line,
 .noticia-card:hover .ri-arrow-right-up-line {
   transform: scale(1.2);
@@ -859,7 +853,6 @@ a:hover::after,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* cobre o espaço sem distorcer */
   border-radius: 10px;
 }
 
@@ -876,7 +869,6 @@ a:hover::after,
     max-width: 100vw;
   }
 
-  /* NAV */
   #nav {
     padding: 16px;
     align-items: center;
@@ -894,7 +886,6 @@ a:hover::after,
     font-size: 24px;
   }
 
-  /* Layout vertical para o conteúdo do menu */
   .menu-conteudo {
     flex-direction: column;
     align-items: flex-start;
@@ -902,7 +893,6 @@ a:hover::after,
     gap: 4vh;
   }
 
-  /* Itens do menu com fonte menor e menos espaçamento */
   .menu-itens li {
     font-size: 1.4rem;
     margin: 0.8rem 0;
@@ -912,7 +902,6 @@ a:hover::after,
     font-size: 1rem;
   }
 
-  /* Menu social abaixo do menu */
   .menu-social {
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -928,7 +917,6 @@ a:hover::after,
     font-size: 0.9rem;
   }
 
-  /* SLIDER */
   .hero-slider {
     height: 60vh;
     margin-top: 4vh;
@@ -944,7 +932,6 @@ a:hover::after,
     line-height: 1.2;
   }
 
-  /* CHAMADA */
   .page2-container {
     flex-direction: column;
     gap: 1.5rem;
@@ -958,8 +945,6 @@ a:hover::after,
   .page2-right {
     font-size: 1rem;
   }
-
-  /* NOTÍCIAS */
 
   .titulo-sessao {
     font-size: 3rem;
@@ -987,8 +972,6 @@ a:hover::after,
     width: 100%;
     height: auto;
   }
-
-  /* IDENTIDADE */
 
   #identidade {
     padding: 0;
@@ -1032,7 +1015,6 @@ a:hover::after,
     max-width: 100%;
   }
 
-  /* RODAPÉ */
   .rodape-grid {
     display: flex;
     flex-direction: column;
@@ -1065,7 +1047,7 @@ a:hover::after,
 
   .rodape-copy {
     text-align: center;
-    padding-left: 2vw;
+    padding-left: 2.5vw;
     font-size: 0.8rem;
     color: #ddd;
   }

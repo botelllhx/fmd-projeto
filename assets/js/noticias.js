@@ -1,5 +1,6 @@
 // Configuração da NewsAPI
-const API_KEY = ''; // Substitua pela sua chave
+const API_KEY = '';
+// 6bf6f486bc2c40ffa83dc50c39a49150
 const API_URL = `https://newsapi.org/v2/everything?q=direito+AND+(universidade+OR+faculdade)&language=pt&sortBy=publishedAt&pageSize=12&apiKey=${API_KEY}`;
 
 // Categorias para nossas notícias
@@ -18,41 +19,40 @@ const filtrosBtns = document.querySelectorAll('.filtro-btn');
 // Variável para armazenar todas as notícias
 let todasNoticias = [];
 
-// Inicializa Locomotive Scroll
-const scroll = new LocomotiveScroll({
-  el: document.querySelector("#main"),
-  smooth: true,
-  multiplier: 0.8,
-  smartphone: {
-    smooth: true
-  }
-});
-
 // Função principal para carregar notícias
 async function carregarNoticias() {
   try {
-    mostrarLoading();
+      mostrarLoading();
 
-    const response = await fetch(API_URL);
-    const data = await response.json();
+      const response = await fetch(API_URL);
+      const data = await response.json();
 
-    if (data.articles && data.articles.length > 0) {
-      todasNoticias = processarArtigos(data.articles);
-      exibirNoticiaDestaque(todasNoticias[0]);
-      exibirListaNoticias(todasNoticias.slice(1, 7));
-      exibirGridNoticias(todasNoticias.slice(7));
-      adicionarEventosFiltros();
+      if (data.articles && data.articles.length > 0) {
+          todasNoticias = processarArtigos(data.articles);
+          exibirNoticiaDestaque(todasNoticias[0]);
+          exibirListaNoticias(todasNoticias.slice(1, 7));
+          exibirGridNoticias(todasNoticias.slice(7));
+          adicionarEventosFiltros();
 
-      // Atualiza o scroll após carregar o conteúdo
-      setTimeout(() => scroll.update(), 300);
-    } else {
-      carregarNoticiasMockadas();
-    }
+          // Atualiza o scroll global
+          if (window.locomotiveScroll) {
+              setTimeout(() => {
+                  window.locomotiveScroll.update();
+                  const main = document.querySelector('#main');
+                  main.style.minHeight = 'auto';
+                  main.style.minHeight = main.scrollHeight + 'px';
+                  window.locomotiveScroll.update();
+              }, 300);
+          }
+      } else {
+          carregarNoticiasMockadas();
+      }
   } catch (error) {
-    console.error('Erro ao carregar notícias:', error);
-    carregarNoticiasMockadas();
+      console.error('Erro ao carregar notícias:', error);
+      carregarNoticiasMockadas();
   }
 }
+
 
 // Processar artigos da API
 function processarArtigos(artigos) {
@@ -273,19 +273,37 @@ function carregarNoticiasMockadas() {
     },
     {
       id: 7,
-      titulo: 'Noticia teste',
-      descricao: '',
-      categoria: 'eventos',
-      imagem: '../assets/img/noticia-6.png',
+      titulo: 'Núcleo de Apoio ao Estudante retorna atividades',
+      descricao: '​O Núcleo de Apoio ao Estudante, do curso de Direito da PUC Minas Contagem, iniciou os atendimentos desse semestre. O Núcleo tem como objetivo orientar os alunos na organização de sua vida acadêmica, planejando seus estudos e possibilitando a melhoria do desempenho no curso e aprimoramento do aprendizado.',
+      categoria: 'noticias',
+      imagem: '../assets/img/noticia-8.png',
       data: '15 de novembro de 2023',
       url: '#'
     },
     {
       id: 8,
-      titulo: 'Noticia teste 2',
-      descricao: '',
+      titulo: 'Curso de Direito recebe ex-ministro do Supremo Tribunal Federal',
+      descricao: 'A palestra A interpretação da Constituição de 1988, realizada pelo Curso de Direito da PUC Minas Contagem no dia 21 de setembro, contou com participação do jurista e professor aposentado da Universidade de São Paulo (USP), professor Eros Roberto Grau, ex-ministro do Supremo Tribunal Federal. Confira a palestra na íntegra no perfil da PUC Minas no YouTube.',
       categoria: 'eventos',
-      imagem: '../assets/img/noticia-6.png',
+      imagem: '../assets/img/noticia-9.png',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
+    {
+      id: 9,
+      titulo: 'Faculdade Mineira de Direito (FMD): José Afrânio Vilela, ministro do Superior Tribunal de Justiça (STJ)...',
+      descricao: '"O tema desta aula está vinculado intimamente ao espírito, dinâmica e escopo da Pontifícia Universidade Católica de Minas Gerais, e se reflete por seus valores consolidados e pelo que nos conta a história", afirmou o Reitor da PUC Minas, Prof. Dr. Pe. Luís Henrique Eloy e Silva, ao dar as boas-vindas a todos os presentes na Aula Inaugural da Faculdade Mineira de Direito (FMD).',
+      categoria: 'eventos',
+      imagem: '../assets/img/noticia-10.jpeg',
+      data: '15 de novembro de 2023',
+      url: '#'
+    },
+    {
+      id: 10,
+      titulo: 'Egresso do Curso de Direito é selecionado em programa que promove acesso a mestrado profissional internacional',
+      descricao: 'O egresso do Curso de Direito da PUC Minas Contagem, Samuel Santos da Silva, foi um dos vinte selecionados do Programa Alcance, realizado pela Fundação Lemann. O objetivo da edição do ano 2021 do programa é apoiar estudantes autodeclarados negros, pardos e indígenas em candidaturas para cursos de mestrado profissional em universidades internacionais parceiras da Fundação.',
+      categoria: 'noticias',
+      imagem: '../assets/img/noticia-11.png',
       data: '15 de novembro de 2023',
       url: '#'
     },
@@ -310,8 +328,11 @@ function animacaoInicialHero() {
 
 animacaoInicialHero();
 
-// Iniciar quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', carregarNoticias);
+if (document.readyState !== 'loading') {
+  carregarNoticias();
+} else {
+  document.addEventListener('DOMContentLoaded', carregarNoticias);
+}
 
 // Atualizar scroll quando a janela for redimensionada
 window.addEventListener('resize', () => scroll.update());

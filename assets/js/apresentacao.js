@@ -1,5 +1,5 @@
-// scripts/apresentacao.js
 document.addEventListener('DOMContentLoaded', function () {
+
     // Verifica se já existe uma instância do Locomotive Scroll
     if (typeof scroll !== 'undefined') {
         scroll.destroy();
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 trigger: item,
                 start: "top 70%",
                 toggleActions: "play none none none",
-                // Importante: usar o container do Locomotive Scroll
                 scroller: "#main"
             },
             opacity: 0,
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 trigger: card,
                 start: "top 80%",
                 toggleActions: "play none none none",
-                // Importante: usar o container do Locomotive Scroll
                 scroller: "#main"
             },
             opacity: 0,
@@ -50,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scroll.update();
     });
 
-    // Configurações do menu (igual à página de notícias)
+    // Configurações do menu
     const menuToggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu-fullscreen");
     const menuIcon = menuToggle.querySelector("i");
@@ -78,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Cursor personalizado (igual à página de notícias)
+    // Cursor personalizado
     const cursor = document.querySelector("#cursor");
     if (cursor) {
         document.addEventListener("mousemove", function (e) {

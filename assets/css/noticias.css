@@ -2,20 +2,21 @@
    ESTILOS ESPECÍFICOS PARA PÁGINA DE NOTÍCIAS
 --------------------------- */
 
-/* Adicione isso no seu noticias.css */
 html,
 body {
-     overflow: hidden;
+     width: 100%;
      height: 100%;
+     margin: 0;
+     padding: 0;
      font-family: "Fraunces", serif;
 }
 
 #main {
-     height: 100vh;
-     overflow-y: auto;
+     width: 100%;
+     min-height: 100vh;
+     overflow: visible;
 }
 
-/* Hero da página de notícias */
 .hero-noticias {
      min-height: 60vh;
      width: 100%;
@@ -49,16 +50,11 @@ body {
      font-family: "Fraunces", serif;
      position: relative;
      display: inline-block;
-     cursor: pointer;
 }
 
-/* Filtros */
 #filtros {
      padding: 3vh 1vw;
      background-color: #f5f5f5;
-     position: sticky;
-     top: 0;
-     z-index: 10;
 }
 
 .filtros-container {
@@ -102,17 +98,13 @@ body {
      font-weight: 600;
 }
 
-/* Notícias em grid (4 colunas) */
-
 #noticias-grid {
      background-color: #fff;
      padding: 5vh 1vw;
 }
 
-
 .noticias-grid-container {
      position: relative;
-     /* Adiciona contexto de posicionamento */
      display: grid;
      grid-template-columns: repeat(4, 1fr);
      gap: 2rem;
@@ -122,7 +114,6 @@ body {
 
 .noticia-card-grid {
      position: relative;
-     /* Container relativo para posicionamento absoluto interno */
      min-height: 350px;
      display: flex;
      flex-direction: column;
@@ -146,7 +137,6 @@ body {
 
 .noticia-card-grid .img-container {
      position: relative;
-     /* Container da imagem relativo para a tag absoluta */
      width: 100%;
      height: 200px;
 }
@@ -200,7 +190,6 @@ body {
      font-weight: 600;
      text-transform: capitalize;
      background-color: rgba(0, 0, 0, 0.7);
-     /* Fundo semi-transparente */
      color: white;
 }
 
@@ -219,18 +208,14 @@ body {
      color: #ef6c00;
 }
 
-
-/* Ajuste o posicionamento do conteúdo abaixo da imagem */
 .noticia-card-grid .info {
      padding: 1.5rem;
      display: flex;
      flex-direction: column;
      gap: 0.8rem;
      margin-top: -1rem;
-     /* Ajuste fino para alinhamento */
 }
 
-/* Remova a tag do rodapé se ela existir lá */
 .noticia-card-grid .rodape .tag {
      display: none;
 }
@@ -242,7 +227,6 @@ body {
      color: #666;
 }
 
-/* Estados de carregamento */
 .loading-destaque,
 .loading-lista,
 .loading-grid {
@@ -272,6 +256,7 @@ body {
 }
 
 /* Responsivo */
+
 @media (max-width: 1200px) {
      .noticias-grid-container {
           grid-template-columns: repeat(3, 1fr);
@@ -294,11 +279,43 @@ body {
 }
 
 @media (max-width: 600px) {
+
+     .titulo-sessao-noticias {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+     }
+
      .noticias-grid-container {
           grid-template-columns: 1fr;
      }
 
      .noticia-destaque img {
           height: 200px;
+     }
+
+     #filtros {
+          padding: 2vh 0.5vw;
+          background-color: #f5f5f5;
+          position: relative;
+          top: 0;
+          z-index: 10;
+     }
+
+     .filtros-container {
+          display: flex;
+          gap: 0.5rem;
+          justify-content: center;
+     }
+
+     .filtro-btn {
+          background: none;
+          border: none;
+          padding: 0.5rem 1.5rem;
+          font-size: 0.9rem;
+          cursor: pointer;
+          border-radius: 50px;
+          transition: all 0.3s ease;
+          position: relative;
+          font-weight: 600;
      }
 }
