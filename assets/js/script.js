@@ -1,32 +1,58 @@
 let scroll; // escopo global
 
 function animarComLocomotive() {
-  gsap.registerPlugin(ScrollTrigger);
+  const isMobile = window.innerWidth <= 768;
 
-  scroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smooth: true,
-  });
+  if (!isMobile) {
+    gsap.registerPlugin(ScrollTrigger);
 
-  scroll.on("scroll", ScrollTrigger.update);
+    scroll = new LocomotiveScroll({
+      el: document.querySelector("#main"),
+      smooth: true,
+      smartphone: {
+        smooth: false
+      },
+      tablet: {
+        smooth: false
+      }
+    });
 
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-      return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed",
-  });
+    scroll.on("scroll", ScrollTrigger.update);
 
-  ScrollTrigger.addEventListener("refresh", () => scroll.update());
-  ScrollTrigger.refresh();
+    ScrollTrigger.scrollerProxy("#main", {
+      scrollTop(value) {
+        return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+      },
+      pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+    });
+
+    ScrollTrigger.addEventListener("refresh", () => scroll.update());
+    ScrollTrigger.refresh();
+  } else {
+    document.querySelector("#main").style.overflow = "auto";
+    document.querySelector("#main").style.height = "auto";
+
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+
+    if (scroll) {
+      scroll.destroy();
+      scroll = null;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.defaults({
+      scroller: window
+    });
+  }
 }
 
 animarComLocomotive();
@@ -200,34 +226,51 @@ menuToggle.addEventListener("click", () => {
 // Slider simples com transição suave
 
 function iniciarSlider(classeContainer, classeSlide) {
-  const container = document.querySelector(classeContainer);
-  const slides = container.querySelectorAll(classeSlide);
-  let atual = 0;
+  // Verifica se não é mobile
+  if (window.innerWidth > 768) {
+    const container = document.querySelector(classeContainer);
+    const slides = container.querySelectorAll(classeSlide);
+    let atual = 0;
 
-  setInterval(() => {
-    slides[atual].classList.remove("ativo");
-    atual = (atual + 1) % slides.length;
-    slides[atual].classList.add("ativo");
-  }, 5000);
+    setInterval(() => {
+      slides[atual].classList.remove("ativo");
+      atual = (atual + 1) % slides.length;
+      slides[atual].classList.add("ativo");
+    }, 5000);
+  }
 }
 
 iniciarSlider(".hero-slider", ".hero-slide");
 
-// Efeito de desfoque no menu ao rolar a página
+// Efeito de desfoque no menu ao rolar a página - Versão universal
 
-setTimeout(() => {
-  if (scroll) {
-    scroll.on("scroll", (args) => {
-      const nav = document.getElementById("nav");
-      const scrollY = args.scroll.y;
-
-      if (scrollY > 100) {
-        nav.classList.add("nav-com-blur");
+function setupNavScrollEffect() {
+  const nav = document.getElementById("nav");
+  
+  if (window.innerWidth <= 768) {
+    // Versão para mobile (scroll nativo)
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
         nav.classList.add("nav-com-blur", "nav-mini");
       } else {
-        nav.classList.remove("nav-com-blur");
         nav.classList.remove("nav-com-blur", "nav-mini");
       }
     });
+  } else {
+    // Versão para desktop (Locomotive Scroll)
+    if (scroll) {
+      scroll.on("scroll", (args) => {
+        if (args.scroll.y > 100) {
+          nav.classList.add("nav-com-blur", "nav-mini");
+        } else {
+          nav.classList.remove("nav-com-blur", "nav-mini");
+        }
+      });
+    }
   }
-}, 500); // pequeno delay para garantir que Locomotive esteja pronta
+}
+
+// Chame a função após a inicialização
+setTimeout(() => {
+  setupNavScrollEffect();
+}, 500);

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Configurações do menu
+    // Configurações do menu (mantido igual)
     const setupMenu = () => {
         const menuToggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu-fullscreen");
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Configurações do cursor
+    // Configurações do cursor (mantido igual)
     const setupCursor = () => {
         const cursor = document.querySelector("#cursor");
         if (cursor) {
@@ -48,31 +47,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Configurações de scroll da nav
+    // NOVA IMPLEMENTAÇÃO DO SCROLL DA NAV - IGUAL À HOME
     const setupNavScroll = () => {
         const nav = document.getElementById('nav');
-        if (nav) {
-            const logo1 = document.querySelector('.logo1');
-            const logo2 = document.querySelector('.logo2');
+        if (!nav) return;
 
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.scrollY;
+        const logo1 = document.querySelector('.logo1');
+        const logo2 = document.querySelector('.logo2');
 
-                if (scrollTop > 100) {
-                    nav.classList.add('nav-com-blur', 'nav-mini');
-                    if (logo1) logo1.style.height = '60px';
-                    if (logo2) logo2.style.height = '60px';
-                } else {
-                    nav.classList.remove('nav-com-blur', 'nav-mini');
-                    if (logo1) logo1.style.height = '90px';
-                    if (logo2) logo2.style.height = '90px';
-                }
-            });
-        }
+        // Função idêntica à da home
+        const handleScroll = () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            if (scrollY > 100) {
+                nav.classList.add("nav-com-blur", "nav-mini");
+                if (logo1) logo1.style.height = '60px';
+                if (logo2) logo2.style.height = '60px';
+            } else {
+                nav.classList.remove("nav-com-blur", "nav-mini");
+                if (logo1) logo1.style.height = '90px';
+                if (logo2) logo2.style.height = '90px';
+            }
+        };
+
+        // Listener igual ao da home
+        window.addEventListener('scroll', handleScroll);
+        
+        // Inicializa o estado
+        handleScroll();
     };
 
-    // Inicializa todas as funções globais
+    // Inicializa todas as funções
     setupMenu();
     setupCursor();
     setupNavScroll();
+
+    // Otimização para mobile
+    if (window.innerWidth <= 768) {
+        document.body.style.overflowX = 'hidden';
+    }
 });
